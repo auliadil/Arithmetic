@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="answer">40sp</dimen>
+    <dimen name="heading1">36sp</dimen>
+    <dimen name="body">24sp</dimen>
+    <dimen name="heading2">20sp</dimen>
+    <dimen name="body1">18sp</dimen>
+    <dimen name="body2">12sp</dimen>
+
+    <dimen name="button_width">144dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+
+    <dimen name="card_border_radius">8dp</dimen>
+
+</resources>

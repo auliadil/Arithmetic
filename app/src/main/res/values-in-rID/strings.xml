@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Arithmetic</string>
+    <string name="new_game">Permainan Baru</string>
+    <string name="scoreboard">Papan Skor</string>
+    <string name="result_correct">Benar!</string>
+    <string name="result_wrong">Salah!</string>
+    <string name="time_left">Sisa Waktu</string>
+    <string name="score">Skor</string>
+    <string name="play_again">Main Lagi</string>
+    <string name="easy_label">Mudah</string>
+    <string name="medium_label">Sedang</string>
+    <string name="hard_label">Sulit</string>
+    <string name="level_label">Pilih level kesulitanmu</string>
+    <string name="time_result_label">Waktumu habis! Skor akhirmu adalah</string>
+    <string name="correct">Benar!</string>
+    <string name="wrong">Salah :(</string>
+    <string name="back_to_home">Kembali ke Beranda</string>
+    <string name="are_you_sure">Apakah anda yakin?</string>
+    <string name="yes">Iya</string>
+    <string name="no">No</string>
+    <string name="cancel">Batal</string>
+</resources>

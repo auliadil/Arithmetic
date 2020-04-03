@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".MainMenuActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            style="@style/TextAppearance.AppCompat.Display2"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appName"
+            android:src="@drawable/ic_arithmetic_logo"
+            android:cropToPadding="true"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/newGameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stateListAnimator="@null"
+            android:layout_below="@id/appLogo"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_color"
+            android:text="@string/new_game"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:onClick="openNewGameDialog"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:stateListAnimator="@null"
+            android:layout_below="@id/newGameButton"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_color"
+            android:text="@string/scoreboard"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/poppins_semi_bold"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Arithmetic</string>
+    <string name="new_game">New Game</string>
+    <string name="scoreboard">Scoreboard</string>
+    <string name="result_correct">Correct!</string>
+    <string name="result_wrong">Wrong!</string>
+    <string name="time_left">Time Left</string>
+    <string name="score">Score</string>
+    <string name="play_again">Play Again</string>
+    <string name="easy_label">Easy</string>
+    <string name="medium_label">Medium</string>
+    <string name="hard_label">Hard</string>
+    <string name="level_label">Choose your difficulty level</string>
+    <string name="time_result_label">Time is up! Your score is</string>
+    <string name="correct">Correct!</string>
+    <string name="wrong">Wrong :(</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+
+</resources>
