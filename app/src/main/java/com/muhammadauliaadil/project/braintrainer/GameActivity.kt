@@ -1,17 +1,22 @@
 package com.muhammadauliaadil.project.arithmetic
 
-import android.content.DialogInterface
+import android.content.Context
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.muhammadauliaadil.project.braintrainer.data.Score
 import kotlinx.android.synthetic.main.activity_game.*
+import kotlinx.android.synthetic.main.dialog_save_score.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -26,6 +31,10 @@ class GameActivity : AppCompatActivity() {
     var score = 0
     var numberOfQuestion = 0
     var bound = 0
+    var level = 0
+
+    val database = Firebase.database
+    val reference = database.getReference("scores")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,16 +43,16 @@ class GameActivity : AppCompatActivity() {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_chevron_left_black)
 
         val intent = intent
-        val level = intent.getIntExtra("KEY_LEVEL", 0)
+        level = intent.getIntExtra("KEY_LEVEL", 0)
 
-        when {
-            level == 0 -> {
+        when (level) {
+            0 -> {
                 bound = 9
             }
-            level == 1 -> {
+            1 -> {
                 bound = 49
             }
-            level == 2 -> {
+            2 -> {
                 bound = 99
             }
         }
@@ -149,12 +158,29 @@ class GameActivity : AppCompatActivity() {
         newQuestion(bound)
     }
 
-    fun saveScore() {
+    fun saveScore(view: View) {
+        val inflater = this.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val formsView: View = inflater.inflate(R.layout.dialog_save_score, null, false)
 
-        // Write a message to the database
-        val database = Firebase.database
-        val myRef = database.getReference("message")
+        val builder = AlertDialog.Builder(this)
+        val name = formsView.findViewById<TextInputEditText>(R.id.nameEditText)
+        builder.setTitle(resources.getString(R.string.save_your_score))
+        builder.setView(formsView)
+        builder.setPositiveButton(resources.getString(R.string.save)) {
+                dialog, which ->
+            Toast.makeText(this, "name " + name.text.toString(), Toast.LENGTH_LONG)
+            writeNewScore(name.text.toString(), level.toString(), score.toString())
+        }
+        builder.setNeutralButton(resources.getString(R.string.cancel)) { dialog, which ->
+            dialog.cancel()
+        }
+        val mDialog = builder.create()
+        mDialog.show()
+    }
 
-        myRef.setValue("Hello, World!")
+    private fun writeNewScore(name: String, level: String, score: String) {
+        val id = UUID.randomUUID().toString()
+        val score = Score(id, name, level, score)
+        reference.child(id).setValue(score)
     }
 }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScoreboardActivity">
+    tools:context=".ScoreboardActivity"
+    android:background="@drawable/ic_background">
 
     <TableLayout
         android:id="@+id/table"
@@ -15,7 +16,7 @@
         android:layout_marginRight="16dp">
 
         <TableRow
-            android:background="@color/secondary"
+            android:background="@color/white"
             android:padding="8dp">
             <TextView
                 android:layout_width="match_parent"
@@ -52,6 +53,6 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_below="@+id/table"
-        tools:listitem="@layout/item_category"/>
+        tools:listitem="@layout/item_score"/>
 
 </RelativeLayout>

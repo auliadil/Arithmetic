@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/ic_arithmetic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ScoreboardActivity"></activity>
+        <activity
+            android:name=".ScoreboardActivity"
+            android:theme="@style/GameActionBar"></activity>
         <activity
             android:name=".MainMenuActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">

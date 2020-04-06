@@ -241,16 +241,31 @@
             android:layout_centerHorizontal="true"/>
 
         <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="saveScore"
+            android:layout_below="@+id/scoreResult"
+            android:background="@drawable/button_color"
+            android:textColor="@color/text_color"
+            android:text="@string/save"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
             android:id="@+id/playAgainButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:onClick="play"
-            android:layout_below="@+id/scoreResult"
+            android:layout_below="@+id/saveButton"
             android:background="@drawable/button_color"
             android:textColor="@color/text_color"
             android:text="@string/play_again"
             android:fontFamily="@font/poppins_semi_bold"
+            android:textAllCaps="false"
             android:layout_centerHorizontal="true"/>
 
         <Button
@@ -264,6 +279,7 @@
             android:textColor="@color/text_color"
             android:text="@string/back_to_home"
             android:fontFamily="@font/poppins_semi_bold"
+            android:textAllCaps="false"
             android:layout_centerHorizontal="true"/>
         
     </RelativeLayout>

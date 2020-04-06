@@ -20,4 +20,7 @@
     <string name="yes">Iya</string>
     <string name="no">No</string>
     <string name="cancel">Batal</string>
+    <string name="save">Simpan</string>
+    <string name="save_your_score">Simpan Skor Kamu</string>
+    <string name="your_name">Nama Kamu</string>
 </resources>
