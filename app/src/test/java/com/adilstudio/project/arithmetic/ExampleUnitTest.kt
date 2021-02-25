@@ -1,4 +1,4 @@
-package com.muhammadauliaadil.project.arithmetic
+package com.adilstudio.project.arithmetic
 
 import org.junit.Test
 

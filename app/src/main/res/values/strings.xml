@@ -22,5 +22,6 @@
     <string name="save">Save</string>
     <string name="save_your_score">Save Your Score</string>
     <string name="your_name">Your Name</string>
-
+    <string name="sum_text" translatable="false">%d + %d</string>
+    <string name="name">Name: %s</string>
 </resources>

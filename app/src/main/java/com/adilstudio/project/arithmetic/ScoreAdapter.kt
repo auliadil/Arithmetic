@@ -1,11 +1,11 @@
-package com.muhammadauliaadil.project.bukalapakbeta.view
+package com.adilstudio.project.bukalapakbeta.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.muhammadauliaadil.project.arithmetic.R
-import com.muhammadauliaadil.project.braintrainer.data.Score
+import com.adilstudio.project.arithmetic.R
+import com.adilstudio.project.arithmetic.data.Score
 import kotlinx.android.synthetic.main.item_score.view.*
 
 class ScoreAdapter(private val scores: ArrayList<Score>) : RecyclerView.Adapter<ScoreAdapter.ScoreHolder>() {

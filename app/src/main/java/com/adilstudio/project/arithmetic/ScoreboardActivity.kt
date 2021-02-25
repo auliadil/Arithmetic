@@ -1,4 +1,4 @@
-package com.muhammadauliaadil.project.arithmetic
+package com.adilstudio.project.arithmetic
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +10,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
-import com.muhammadauliaadil.project.braintrainer.data.Score
+import com.adilstudio.project.arithmetic.data.Score
 import java.util.*
 
 class ScoreboardActivity : AppCompatActivity() {

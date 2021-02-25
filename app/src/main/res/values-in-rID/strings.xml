@@ -23,4 +23,5 @@
     <string name="save">Simpan</string>
     <string name="save_your_score">Simpan Skor Kamu</string>
     <string name="your_name">Nama Kamu</string>
+    <string name="name">Nama: %s</string>
 </resources>

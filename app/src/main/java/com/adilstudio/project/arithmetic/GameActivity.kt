@@ -1,4 +1,4 @@
-package com.muhammadauliaadil.project.arithmetic
+package com.adilstudio.project.arithmetic
 
 import android.content.Context
 import android.os.Bundle
@@ -7,16 +7,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.muhammadauliaadil.project.braintrainer.data.Score
+import com.adilstudio.project.arithmetic.data.Score
 import kotlinx.android.synthetic.main.activity_game.*
-import kotlinx.android.synthetic.main.dialog_save_score.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -46,22 +44,16 @@ class GameActivity : AppCompatActivity() {
         level = intent.getIntExtra("KEY_LEVEL", 0)
 
         when (level) {
-            0 -> {
-                bound = 9
-            }
-            1 -> {
-                bound = 49
-            }
-            2 -> {
-                bound = 99
-            }
+            0 -> bound = 9
+            1 -> bound = 49
+            2 -> bound = 99
         }
 
         start()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.getItemId()) {
+        return when (item.itemId) {
             android.R.id.home -> {
                 finish()
                 true
@@ -70,7 +62,7 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
-    fun start() {
+    private fun start() {
         play(playAgainButton)
     }
 
@@ -78,7 +70,7 @@ class GameActivity : AppCompatActivity() {
         gameLayout.visibility = View.VISIBLE
         score = 0
         numberOfQuestion = 0
-        timerTextView.text = "30"
+        timerTextView.text = DEFAULT_TIME
         scoreTextView.text = "$score"
         newQuestion(bound)
 
@@ -116,11 +108,11 @@ class GameActivity : AppCompatActivity() {
 
     private fun newQuestion(bound : Int) {
         answers.clear()
-        var rand = Random()
+        val rand = Random()
         a = rand.nextInt(bound)
         b = rand.nextInt(bound)
 
-        sumTextView.text = "$a + $b"
+        sumTextView.text = getString(R.string.sum_text, a, b)
 
         locationOfCorrectAnswer = rand.nextInt(4)
 
@@ -144,13 +136,13 @@ class GameActivity : AppCompatActivity() {
     }
 
     fun chooseAnswer(view : View) {
-        if(view.tag.toString().equals(locationOfCorrectAnswer.toString())) {
-            resultTextView.text = resources.getString(R.string.correct)
+        if(view.tag.toString() == locationOfCorrectAnswer.toString()) {
+            resultTextView.text = getString(R.string.correct)
             score += 100
             Log.i("Correct!", "You got it!")
         }
         else {
-            resultTextView.text = resources.getString(R.string.wrong)
+            resultTextView.text = getString(R.string.wrong)
             Log.i("Wrong!", ":/")
         }
         numberOfQuestion++
@@ -166,12 +158,11 @@ class GameActivity : AppCompatActivity() {
         val name = formsView.findViewById<TextInputEditText>(R.id.nameEditText)
         builder.setTitle(resources.getString(R.string.save_your_score))
         builder.setView(formsView)
-        builder.setPositiveButton(resources.getString(R.string.save)) {
-                dialog, which ->
-            Toast.makeText(this, "name " + name.text.toString(), Toast.LENGTH_LONG)
+        builder.setPositiveButton(resources.getString(R.string.save)) { _, _ ->
+            Toast.makeText(this, getString(R.string.name, name.text.toString()), Toast.LENGTH_LONG)
             writeNewScore(name.text.toString(), level.toString(), score.toString())
         }
-        builder.setNeutralButton(resources.getString(R.string.cancel)) { dialog, which ->
+        builder.setNeutralButton(resources.getString(R.string.cancel)) { dialog, _ ->
             dialog.cancel()
         }
         val mDialog = builder.create()
@@ -182,5 +173,9 @@ class GameActivity : AppCompatActivity() {
         val id = UUID.randomUUID().toString()
         val score = Score(id, name, level, score)
         reference.child(id).setValue(score)
+    }
+    
+    companion object {
+        const val DEFAULT_TIME = "30"
     }
 }
