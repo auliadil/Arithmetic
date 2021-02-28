@@ -10,19 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.adilstudio.project.arithmetic.ScoreboardActivity"
-            android:theme="@style/GameActionBar" />
-        <activity
-            android:name="com.adilstudio.project.arithmetic.MainMenuActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.adilstudio.project.arithmetic.GameActivity"
+            android:name=".ui.scoreboard.ScoreboardActivity"
+            android:theme="@style/GameActionBar" />
+        <activity
+            android:name=".ui.mainmenu.MainMenuActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".ui.game.GameActivity"
             android:theme="@style/GameActionBar" />
     </application>
 
