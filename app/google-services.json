@@ -1,34 +1,41 @@
 {
   "project_info": {
-    "project_number": "554873768548",
-    "firebase_url": "https://arithmetic-e593d.firebaseio.com",
-    "project_id": "arithmetic-e593d",
-    "storage_bucket": "arithmetic-e593d.appspot.com"
+    "project_number": "648039286676",
+    "project_id": "arithmetic-957c5",
+    "storage_bucket": "arithmetic-957c5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:554873768548:android:1d4ecda5dff7c5cd0eed71",
+        "mobilesdk_app_id": "1:648039286676:android:8a2536ab17d25c231bf181",
         "android_client_info": {
           "package_name": "com.adilstudio.project.arithmetic"
         }
       },
       "oauth_client": [
         {
-          "client_id": "554873768548-96km0rlu3t7ui1ffp5117n4oc2agc7l3.apps.googleusercontent.com",
+          "client_id": "648039286676-l607cllg5cb5m0vtasn2l0imt8m3bbjm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adilstudio.project.arithmetic",
+            "certificate_hash": "78feb76b418c75b1881f15a4da4dad3701e4a6fc"
+          }
+        },
+        {
+          "client_id": "648039286676-gtfjgjcbfj759ocvl7uefu1bo3ih4hst.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAmiizQmyIy3tamlC9sjcUfxAIoLLXt29E"
+          "current_key": "AIzaSyDGeXtHOPLUNqdd3Bdju29Sd8mw4Q_SSY0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "554873768548-96km0rlu3t7ui1ffp5117n4oc2agc7l3.apps.googleusercontent.com",
+              "client_id": "648039286676-gtfjgjcbfj759ocvl7uefu1bo3ih4hst.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

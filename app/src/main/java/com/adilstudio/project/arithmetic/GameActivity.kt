@@ -21,8 +21,6 @@ import kotlin.collections.ArrayList
 
 class GameActivity : AppCompatActivity() {
 
-    var a = 5
-    var b = 2
     var answers : MutableList<Int> = ArrayList()
     var wrongAnswer = 0
     var locationOfCorrectAnswer = 0
@@ -31,8 +29,8 @@ class GameActivity : AppCompatActivity() {
     var bound = 0
     var level = 0
 
-    val database = Firebase.database
-    val reference = database.getReference("scores")
+    private val database = Firebase.database
+    private val reference = database.getReference("scores")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -109,20 +107,20 @@ class GameActivity : AppCompatActivity() {
     private fun newQuestion(bound : Int) {
         answers.clear()
         val rand = Random()
-        a = rand.nextInt(bound)
-        b = rand.nextInt(bound)
+        val firstNumber = rand.nextInt(bound)
+        val secondNumber = rand.nextInt(bound)
 
-        sumTextView.text = getString(R.string.sum_text, a, b)
+        sumTextView.text = getString(R.string.sum_text, firstNumber, secondNumber)
 
         locationOfCorrectAnswer = rand.nextInt(4)
 
         for (i in 0..3) {
             if (i == locationOfCorrectAnswer) {
-                answers.add(a + b)
+                answers.add(firstNumber + secondNumber)
             }
             else {
                 wrongAnswer = rand.nextInt(bound)
-                while(wrongAnswer == a + b) {
+                while(wrongAnswer == firstNumber + secondNumber) {
                     wrongAnswer = rand.nextInt(bound)
                 }
                 answers.add(wrongAnswer)
